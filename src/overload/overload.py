@@ -26,7 +26,7 @@ class Function(object):
         # through the arguments.
         fn = Namespace.get_instance().get(self.fn, *args)
         if not fn:
-            raise Exception("no matching function found.")
+            raise OverloadException("no matching function found.")
 
         # invoking the wrapped function and returning the value.
         return fn(*args, **kwargs)
@@ -58,7 +58,7 @@ class Namespace(object):
             self.function_map = {}
             Namespace.__instance = self
         else:
-            raise Exception("cannot instantiate Namespace again.")
+            raise OverloadException("cannot instantiate Namespace again.")
 
     @staticmethod
     def get_instance():
@@ -83,6 +83,10 @@ class Namespace(object):
         """
         func = Function(fn)
         return self.function_map.get(func.key(args=args))
+
+
+class OverloadException(Exception):
+    pass
 
 
 def overload(fn):

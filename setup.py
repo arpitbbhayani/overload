@@ -28,7 +28,6 @@ setup(
     author="Arpit Bhayani",
     author_email="arpit.b.bhayani@gmail.com",
     url="https://github.com/arpitbbhayani/overload",
-    py_modules=["overload"],
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     package_data={"": ["README.md"]},
