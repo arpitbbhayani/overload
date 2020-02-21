@@ -40,4 +40,4 @@ def test_namespace_re_instantiation_attempt():
     from overload.overload import Namespace
 
     with pytest.raises(OverloadException):
-        namespace2 = Namespace()  # should raise exception
+        Namespace()  # should raise exception
