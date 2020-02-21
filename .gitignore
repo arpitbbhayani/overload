@@ -115,3 +115,5 @@ package-lock.json
 
 # Mac cruft
 .DS_Store
+
+.vscode
