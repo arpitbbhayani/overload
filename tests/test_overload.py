@@ -34,3 +34,10 @@ def test_overload_functions():
 def test_no_such_function():
     with pytest.raises(OverloadException):
         area(1, 2, 3, 4)
+
+
+def test_namespace_re_instantiation_attempt():
+    from overload.overload import Namespace
+
+    with pytest.raises(OverloadException):
+        Namespace()  # should raise exception
